@@ -12,13 +12,27 @@ namespace hrm_app_api.Controllers
         public ActionResult Index()
         {
             ViewBag.Title = "Home Page";
-            //SqlQuery("select UNIT_NAME from GS_UNIT");
-            using (hrmappDbContext db = new hrmappDbContext())
-            {
-                var xxx = db.GS_TEST.ToList();
-            }
+
+            EF_TEST();
+
             return View();
         }
+
+        private void EF_TEST()
+        {
+            using (hrmappDbContext db = new hrmappDbContext())
+            {
+                List<EMPLOYEE> objList = db.EMPLOYEE.ToList();
+                List<DEPARTMENT> objList2 = db.DEPARTMENT.ToList();
+            }
+        }
+
+
+        private void SQL_TEST()
+        {
+            //SqlQuery("select UNIT_NAME from GS_UNIT");
+        }
+
 
         public void SqlQuery(string sql)
         {
@@ -26,11 +40,11 @@ namespace hrm_app_api.Controllers
             {
                 try
                 {
-                    var xxx = db.Database.SqlQuery<GS_UNIT>(sql).ToList();
+                    var xxx = db.Database.SqlQuery<DEPARTMENT>(sql).ToList();
                 }
                 catch (Exception ex)
                 {
-                    
+
                 }
             }
         }

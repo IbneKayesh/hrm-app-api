@@ -6,9 +6,12 @@ using System.Web;
 
 namespace hrm_app_api.Models
 {
-    public class GS_TEST
+    public class DEPARTMENT
     {
         [Key]
-        public string TEST_NAME { get; set; }
+        public int DEPT_ID { get; set; }
+        public string DEPT_NAME { get; set; }
+
+        public ICollection<EMPLOYEE> EMPLOYEE { get; set; }
     }
 }

@@ -13,8 +13,9 @@ namespace hrm_app_api.Models
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.HasDefaultSchema("PNPLS");
+            modelBuilder.HasDefaultSchema("NGAPP");
         }
-        public DbSet<GS_TEST> GS_TEST { get; set; }
+        public DbSet<EMPLOYEE> EMPLOYEE { get; set; }
+        public DbSet<DEPARTMENT> DEPARTMENT { get; set; }
     }
 }
