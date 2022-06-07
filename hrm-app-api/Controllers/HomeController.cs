@@ -13,7 +13,7 @@ namespace hrm_app_api.Controllers
         {
             ViewBag.Title = "Home Page";
 
-            EF_TEST();
+           //EF_TEST();
 
             return View();
         }
