@@ -7,6 +7,7 @@ using System.Web;
 
 namespace hrm_app_api.Models
 {
+    [Table("EMPLOYEE")]
     public class EMPLOYEE
     {
         [Key]
